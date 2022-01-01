@@ -8,6 +8,8 @@
 
     <article  id="articleContent" class="post-content" style="position:relative;">
         {{ .Content }}
+
+        {{ partial "article/social-share.html" . }}
     </article>
 
 
@@ -15,5 +17,5 @@
 </section>
 
 {{ $script := resources.Get "js/progressBar.js" }}
- <script src="{{ $script.RelPermalink }}"></script>
+ <script src="{{ $script.RelPermalink }}"></script> 
 {{ end }}
