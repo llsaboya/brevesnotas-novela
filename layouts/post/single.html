@@ -6,7 +6,7 @@
 
     {{ partial "article/progress" . }}
 
-    <article  id="articleContent" class="post-content" style="position:relative;">
+    <article data-clarity-region="article" id="articleContent" class="post-content" style="position:relative;">
         {{ .Content }}
 
         {{ partial "article/social-share.html" . }}
