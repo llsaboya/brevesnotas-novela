@@ -12,6 +12,8 @@
     {{ with .Params.forestry_instant_preview_id }}
       {{- safeHTML (printf "<meta property='forestry_instant_preview_id' content='%s'>" .) -}}
     {{ end -}}
+    <!-- Global Analytics -->
+    {{ if not .Site.IsServer }}
     {{ template "_internal/google_analytics.html" . }}
     {{ template "_internal/google_analytics_async.html" . }}   
   
@@ -23,5 +25,6 @@
          y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
       })(window, document, "clarity", "script", "3ypjc4jokn");
     </script>
+    {{ end }}
 
 </head>
