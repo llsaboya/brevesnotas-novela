@@ -23,14 +23,14 @@
             {{ end }}>
               <div class="article-data-outer">
                 <div class="image-container">
-                  <img src="{{ $article.Params.hero }}" class="article-image" />
+                  <img src="{{ $article.Params.hero }}" class="article-image" alt="{{ $article.Params.title }}" />
                 </div>
                 <div class="article-data">
                   <h2 class="article-title">
                     {{ $article.Params.title }}
                   </h2>
                   <p class="article-excerpt">
-                    {{ $article.Params.excerpt }}
+                    {{ $article.Params.description }}
                   </p>
                   <div class="article-metadata">
                     {{ $article.Date.Format "January 2, 2006" }} • {{ $article.ReadingTime }} min read

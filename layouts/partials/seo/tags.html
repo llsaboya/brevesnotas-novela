@@ -13,10 +13,10 @@
 {{- $seo := .seo -}}
 
 <title>{{ $seo.title }}</title>
-<meta name="description" content="{{ $seo.description }}">
+<meta name="description" content="{{ if $seo.description }}{{ $seo.description }}{{ else if .Site.Params.Description }}{{ .Site.Params.Description }}{{ else }}Esta obra organizada de um modo um tanto caótico já foi uma boa idéia.{{ end }}">
 <meta property="og:title" content="{{ $seo.title }}">
 <meta property="og:site_name" content="{{ $seo.site_name }}">
-<meta property="og:description" content="{{ $seo.description }}">
+<meta property="og:description" content="{{ if $seo.description }}{{ $seo.description }}{{ else if .Site.Params.Description }}{{ .Site.Params.Description }}{{ else }}Esta obra organizada de um modo um tanto caótico já foi uma boa idéia.{{ end }}">
 <meta property="og:url" content="{{ .page.Permalink }}">
 <meta property="og:type" content="{{ $seo.type }}">
 <meta property="og:locale" content="{{ $seo.locale }}">
@@ -36,7 +36,7 @@
 	<meta name="twitter:site" content="{{- . }}">
 	<meta name="twitter:creator" content="{{- . }}">
 {{ end }}
-	<meta name="twitter:description" content="{{- $seo.description }}">
+	<meta name="twitter:description" content="{{ if $seo.description }}{{ $seo.description }}{{ else if .Site.Params.Description }}{{ .Site.Params.Description }}{{ else }}Esta obra organizada de um modo um tanto caótico já foi uma boa idéia.{{ end }}">
 <meta name="twitter:image" content="{{- $seo.image }}">
 <meta property="article:published_time" content="{{- $seo.published_time }}">
 {{- with $seo.updated_time }}
