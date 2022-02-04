@@ -28,7 +28,7 @@ of the whole section and append them to our $next slice. */}}
     {{ $next = $next | append (first $diff $articles) }}
 {{ end }}
 <section id="articleNext" class="section nartrow">
-    <h3 class="footer-next-heading">More articles from {{ .Site.Title }}</h3>
+    <h3 class="footer-next-heading">More from {{ .Site.Title }}</h3>
     <div class="footer-spacer"></div>
     <div class="next-articles-grid" numberOfArticles={numberOfArticles}>
         <div class="post-row">
@@ -37,7 +37,7 @@ of the whole section and append them to our $next slice. */}}
                 {{ if not $index}} id="article-link-bigger"{{ end }}>
                     <div>
                         <div class="image-container">
-                            <img src="{{ $article.Params.hero }}" class="article-image" />
+                            <img src="{{ $article.Params.hero }}" alt="{{ $article.Params.title }}" class="article-image" />
                         </div>
                         <div>
                             <h2 class="article-title">
